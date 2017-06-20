@@ -114,6 +114,7 @@
     function editorHtml (content, options) {
         var html = '';
 
+        html += '<div class="md-brows">sdfsfdf dsf dsf sdf</div>';
         html += '<div class="md-loading"><span class="md-icon-container"><span class="md-icon"></span></span></div>';
         html += '<div class="md-toolbar">';
             html += '<div class="btn-toolbar">';

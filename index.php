@@ -4,10 +4,10 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Bootstrap Markdown Editor</title>
+		<title>Start Bootstrap Markdown Editor</title>
 
 		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" rel="stylesheet">
+		<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" rel="stylesheet"> -->
 		<link href="/editor/dist/css/bootstrap-markdown-editor.css" rel="stylesheet">
 		<link rel="stylesheet" href="/css/androidstudio.css">
 	</head>
@@ -34,7 +34,7 @@
 		<div class="container">
 			<h1>Bootstrap Markdown Editor</h1>
 
-			<form id="form">
+			<!-- <form id="form"> -->
 				<textarea name="text" id="editor"># Header Level 1
 
 **Pellentesque habitant morbi tristique** senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. _Aenean ultricies mi vitae est_. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, `commodo vitae`, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum  rutrum orci, sagittis tempus lacus enim ac dui. [Donec non enim](#) in turpis pulvinar facilisis. Ut felis.
@@ -60,7 +60,7 @@
 }
 ```
 				</textarea>
-			</form>
+			<!-- </form> -->
 		</div>
 
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -77,14 +77,14 @@
 					preview: true,
 					imageUpload: true,
 					imageBrows: true, 
-					uploadPath: 'upload.php',
+					uploadPath: '/inc/eng_marked.php?act=upload',
 					uploadDir: '/img/',
 					onPreview: function (content, callback) {
 						$.ajax({
-							url: 'prev.php',
+							url: '/inc/eng_marked.php',
 							type: 'POST',
 							dataType: 'html',
-							data: {content: content},
+							data: {content: content, act:'preview'},
 						})
 						.done(function(result) {
 							// Return the html:
