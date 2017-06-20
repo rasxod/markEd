@@ -58,5 +58,5 @@ if ($act == 'brows') {
 	}
 	echo json_encode($ImageList);
 }
-echo $_POST['act'];
+// echo $_POST['act'];
 ?>
