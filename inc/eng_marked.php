@@ -30,9 +30,10 @@ if ($act == 'preview') {
 if ($act == 'upload') {
 	$uploadedFiles = array();
 	foreach ($_FILES as $key => $file) {
-		// print_r($file['tmp_name']);
+		// print_r(getimagesize($file['tmp_name']));
 		if (!empty($file)) {
-			$ext = $types[getimagesize($file['tmp_name'])['2']];
+			$ext = $MarkedParams['TypesImg'][getimagesize($file['tmp_name'])['2']];
+			// print_r($ext);
 			$ResultImgName = $MarkedParams['ImgFolder'].get_unic_img($ext);
 			if (copy($file['tmp_name'], $_SERVER['DOCUMENT_ROOT'].$ResultImgName)) {
 				$uploadedFiles[] = $ResultImgName;
