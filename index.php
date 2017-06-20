@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Start Bootstrap Markdown Editor</title>
+		<title>Markdown Editor</title>
 
 		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-		<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" rel="stylesheet"> -->
-		<link href="/editor/dist/css/bootstrap-markdown-editor.css" rel="stylesheet">
-		<link rel="stylesheet" href="/css/androidstudio.css">
+		<link href="/css/marked.css" rel="stylesheet">
+		<!-- <link rel="stylesheet/less" type="text/css" href="/css/marked.less" /> -->
+		<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script> -->
 	</head>
 	<body>
 
+<!-- <link rel="stylesheet" href="/css/androidstudio.css"> -->
 <?
 // include 'class/parsedown.php';
 // $pars_text = new Parsedown();
@@ -30,9 +31,15 @@
 // echo $pars_text->text($text);
 
 ?>
+<!-- <script src="/js/highlight.pack.js"></script> -->
+<!-- <script>
+	jQuery(document).ready(function($) {
+		hljs.initHighlightingOnLoad();
+	});
+</script> -->
 
 		<div class="container">
-			<h1>Bootstrap Markdown Editor</h1>
+			<h1>Markdown Editor</h1>
 
 			<!-- <form id="form"> -->
 				<textarea name="text" id="editor"># Header Level 1
@@ -66,19 +73,17 @@
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
-		<script src="/js/bootstrap-markdown-editor.js"></script>
-		<script src="/js/highlight.pack.js"></script>
+		<script src="/js/marked.js"></script>
 		<script>
 			jQuery(document).ready(function($) {
 
-				hljs.initHighlightingOnLoad();
 
 				$('#editor').markdownEditor({
 					preview: true,
 					imageUpload: true,
 					imageBrows: true, 
 					uploadPath: '/inc/eng_marked.php?act=upload',
-					uploadDir: '/img/',
+					uploadDir: '/inc/eng_marked.php?act=brows',
 					onPreview: function (content, callback) {
 						$.ajax({
 							url: '/inc/eng_marked.php',
