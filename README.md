@@ -6,14 +6,18 @@ Markdown Editor
 
 ```html
 <link href="/css/marked.css" rel="stylesheet">
+
 <textarea name="text" id="editor"></textarea>
+
 <!-- only test -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <!-- only test @END -->
+
 <script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
 <script src="/js/marked.js"></script>
-<script>
+
+<script type="text/javascript">
 	jQuery(document).ready(function($) {
 		var pluginDir='',
 			ImgFolder='/img/'; //default image dir $_SERVER['DOCUMENT_ROOT'].'/img/';
