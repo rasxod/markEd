@@ -4,7 +4,7 @@ Markdown Editor
 
 # Пример подключения
 
-```
+```html
 <link href="/css/marked.css" rel="stylesheet">
 <textarea name="text" id="editor"></textarea>
 <!-- only test -->
