@@ -1,5 +1,5 @@
 # markEd
-Markdown Editor
+Markdown Editor(редактор Markdown) для вашего сайта
 
 
 # Пример подключения
