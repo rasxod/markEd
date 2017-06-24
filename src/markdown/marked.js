@@ -293,7 +293,7 @@
 			container.find('.md-brows').on('click', '.sel_img', function(){
 				var _image_name = $(this).attr('src');
 
-				snippetManager.insertSnippet(editor, '![](' + _image_name + '$2)');
+				snippetManager.insertSnippet(editor, '![width=,height=](' + _image_name + '$2)');
 	
 				if (!($(this).hasClass('active'))) {
 					$(this).addClass('active');

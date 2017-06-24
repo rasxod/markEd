@@ -5,7 +5,8 @@
      site: ssmart.ru
   company: Ssmart IT
 */
-
+// echo $_SERVER['SCRIPT_FILENAME'];
+// echo __DIR__;
 
 // data array
 $MarkedParams = array(
@@ -13,13 +14,19 @@ $MarkedParams = array(
 	'ImgFolder'	=> '/img/',
 	'TypesImg' 	=> array('','gif','jpg','png'),
 	);
+if ($_GET['ImgFolder'] != '') {
+	$MarkedParams['ImgFolder'] = $_GET['ImgFolder'];
+}
+// Тип действия
+$act = $_REQUEST['act'];
 
+// для уникальности имен изображений при записи в папку 
+// будем надеятся что пересечений не случится )))) 
 function get_unic_img($ext){
 	$result = uniqid().'.'.$ext;
 	return $result;
 }
 
-$act = $_REQUEST['act'];
 
 if ($act == 'preview') {
 	include $MarkedParams['parser'];

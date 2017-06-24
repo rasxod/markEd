@@ -70,24 +70,28 @@
 				</textarea>
 			<!-- </form> -->
 		</div>
-
+		<!-- only test -->
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<!-- only test @END -->
+
+
 		<script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
 		<script src="/js/marked.js"></script>
 		<script>
 			jQuery(document).ready(function($) {
-
-
+				// var pluginDir = '/plugins/marked';
+				var pluginDir='',
+					ImgFolder='/img/'; //default image dir $_SERVER['DOCUMENT_ROOT'].'/img/';
 				$('#editor').markdownEditor({
 					preview: true,
 					imageUpload: true,
 					imageBrows: true, 
-					uploadPath: '/inc/eng_marked.php?act=upload',
-					uploadDir: '/inc/eng_marked.php?act=brows',
+					uploadPath: pluginDir+'/inc/eng_marked.php?act=upload&ImgFolder='+ImgFolder,
+					uploadDir: pluginDir+'/inc/eng_marked.php?act=brows&ImgFolder='+ImgFolder,
 					onPreview: function (content, callback) {
 						$.ajax({
-							url: '/inc/eng_marked.php',
+							url: pluginDir+'/inc/eng_marked.php',
 							type: 'POST',
 							dataType: 'html',
 							data: {content: content, act:'preview'},
